@@ -169,7 +169,7 @@ public class ModifyTilePrefabs : EditorWindow
                 string idAsString = childSpriteRenderer.sprite.name.Substring(EditorUtilityFunctions.spriteSheetIDPrefix.Length);
                 int id = int.Parse(idAsString);
 
-                GameObject currentPrefab = (GameObject)PrefabUtility.GetCorrespondingObjectFromSource(child.gameObject);
+                GameObject currentPrefab = (GameObject)PrefabUtility.GetPrefabParent(child.gameObject);
                 string currentType = currentPrefab.name.Substring(EditorUtilityFunctions.tilePrefix.Length);
                 string targetType = prefabByIndexArray[id];
 
